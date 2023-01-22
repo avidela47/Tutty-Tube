@@ -20,24 +20,20 @@ body {
 
 .alert{
     text-align: center;
-    border-radius: 50%;
 }
 
 #result{
-    color: white;
-    
+    color: rgb(37, 37, 37);
     text-align: center;
 }
 
 #result2{
     color: white;
-    
     text-align: center;
 }
 
 #result3{
-    color: rgb(37, 37, 37);
-    
+    color: white;
     text-align: center;
 }
 
@@ -45,8 +41,25 @@ body {
     margin-left: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .logo {
         margin-left: 30px;
-    color: black; }
+   }
+   .h1{
+    color: white;
+   }
+   #result{
+    color: white;
+    text-align: center;
+}
+
+#result2{
+    color: white;
+    text-align: center;
+}
+
+#result3{
+    color: rgb(37, 37, 37);
+    text-align: center;
+}
 }
