@@ -1,65 +1,151 @@
 body {
     background-image: url(../img/fondo.jpg);
     background-size: cover;
-    background-attachment: fixed; }
-.logo{
-    height: 100px;
-    width: 100px;
-    margin-left: 450px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.col-md-3{
+.logo {
+    height: 100%;
+    width: 20%;
+    margin-left: 450px;
     color: white;
 }
 
-.h1{
+.h1 {
     color: white;
     text-align: center;
     margin-top: -85px;
+    text-transform: uppercase;
 }
 
-.alert{
+.alert {
     text-align: center;
-}
-
-#result{
-    color: rgb(37, 37, 37);
-    text-align: center;
-}
-
-#result2{
+    background-color: transparent;
     color: white;
-    text-align: center;
+    border: none;
 }
 
-#result3{
+/* Estilos para tarjetas */
+#result, #result2, #result3 {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 10px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     color: white;
-    text-align: center;
 }
 
-.btn{
+#result {
+    background-image: url("https://i.pinimg.com/236x/10/f2/26/10f226796279ffdbe5c0a9eb183f621d.jpg");
+}
+
+#result2 {
+    background-image: url("https://i.pinimg.com/236x/56/f7/10/56f710a79f8a629e23e33f3dae048959.jpg");
+}
+
+#result3 {
+    background-image: url("https://i.pinimg.com/236x/ca/cc/80/cacc80d052419b6e765a01eabeaef0b6.jpg");
+}
+
+#result:hover, #result2:hover, #result3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    background-color: #0004ff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin-left: 30px;
+    margin-top: 70px;
 }
 
+.btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    color: #0004ff;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para pantallas pequeñas */
 @media screen and (max-width: 767px) {
     .logo {
-        margin-left: 30px;
-   }
-   .h1{
-    color: white;
-   }
-   #result{
-    color: white;
-    text-align: center;
+        width: 50%;
+        margin-left: 0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .h1 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    #result, #result2, #result3 {
+        font-size: 14px;
+        width: 90%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 90%;
+        margin: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }
 
-#result2{
-    color: white;
-    text-align: center;
+/* Estilos para tabletas */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .logo {
+        width: 40%;
+        margin-left: 0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .h1 {
+        font-size: 28px;
+        margin-top: 10px;
+    }
+
+    #result, #result2, #result3 {
+        font-size: 16px;
+        width: 85%;
+        max-width: 400px;
+        padding: 18px;
+    }
+
+    .btn {
+        width: 85%;
+        margin: 30px auto;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
 }
 
-#result3{
-    color: rgb(37, 37, 37);
-    text-align: center;
-}
-}
+
