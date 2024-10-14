@@ -1,151 +1,331 @@
-body {
-    background-image: url(../img/fondo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%; /* Ocupa toda la altura de la ventana */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    margin: 0; /* Elimina cualquier margen */
+    background-image: url("https://i.pinimg.com/236x/37/ad/78/37ad784d6eb1830d31939e3a571e182f.jpg");
+    background-size: 100% auto; /* Ajusta la imagen para que ocupe el 100% del ancho sin deformarse */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-color: #000; /* Fondo negro si la imagen no carga */
+}
+
+/* Estilo del contenedor del logo */
+.logo-container {
+    display: flex;
+    /* Usa flexbox para alinear elementos */
+    align-items: center;
+    /* Centra verticalmente el logo */
+    justify-content: center;
+    /* Centra horizontalmente el logo */
+    height: 60px;
+    /* Ajusta la altura del contenedor */
+}
+
+/* Estilo de la imagen del logo */
 .logo {
     height: 100%;
-    width: 20%;
-    margin-left: 450px;
-    color: white;
+    /* El logo ocupará el 100% de la altura del contenedor */
+    width: auto;
+    /* Mantiene la proporción del logo */
+    max-height: 50px;
+    /* Altura máxima para mantener un tamaño adecuado */
+    transition: transform 0.3s;
+    /* Suaviza el cambio en transformaciones */
 }
 
-.h1 {
-    color: white;
-    text-align: center;
-    margin-top: -85px;
-    text-transform: uppercase;
+/* Efecto al pasar el mouse sobre el logo */
+.logo:hover {
+    transform: scale(1.05);
+    /* Agranda ligeramente el logo al pasar el mouse */
 }
 
-.alert {
-    text-align: center;
-    background-color: transparent;
-    color: white;
-    border: none;
+.ruleta-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
 }
 
-/* Estilos para tarjetas */
-#result, #result2, #result3 {
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 10px;
-    margin: 20px auto;
+.ruleta {
     width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    color: white;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 5s ease-out;
+    background-image: url("https://i.pinimg.com/236x/c0/8a/5a/c08a5a0f58617e1defc4eb9e59c8772e.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#result {
-    background-image: url("https://i.pinimg.com/236x/10/f2/26/10f226796279ffdbe5c0a9eb183f621d.jpg");
+.letra {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    transform-origin: center;
+    transform: rotate(0deg);
+    color: #ffffff;
+    transition: color 0.3s ease;
 }
 
-#result2 {
-    background-image: url("https://i.pinimg.com/236x/56/f7/10/56f710a79f8a629e23e33f3dae048959.jpg");
+.ruleta .letra:nth-child(1) {
+    transform: rotate(0deg) translate(130px);
 }
 
-#result3 {
-    background-image: url("https://i.pinimg.com/236x/ca/cc/80/cacc80d052419b6e765a01eabeaef0b6.jpg");
+.ruleta .letra:nth-child(2) {
+    transform: rotate(13.84deg) translate(130px);
 }
 
-#result:hover, #result2:hover, #result3:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.ruleta .letra:nth-child(3) {
+    transform: rotate(27.69deg) translate(130px);
 }
 
-.btn {
-    background-color: #0004ff;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 25px;
+.ruleta .letra:nth-child(4) {
+    transform: rotate(41.53deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(5) {
+    transform: rotate(55.38deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(6) {
+    transform: rotate(69.23deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(7) {
+    transform: rotate(83.07deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(8) {
+    transform: rotate(96.92deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(9) {
+    transform: rotate(110.76deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(10) {
+    transform: rotate(124.61deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(11) {
+    transform: rotate(138.46deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(12) {
+    transform: rotate(152.30deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(13) {
+    transform: rotate(166.15deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(14) {
+    transform: rotate(180deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(15) {
+    transform: rotate(193.84deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(16) {
+    transform: rotate(207.69deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(17) {
+    transform: rotate(221.53deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(18) {
+    transform: rotate(235.38deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(19) {
+    transform: rotate(249.23deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(20) {
+    transform: rotate(263.07deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(21) {
+    transform: rotate(276.92deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(22) {
+    transform: rotate(290.76deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(23) {
+    transform: rotate(304.61deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(24) {
+    transform: rotate(318.46deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(25) {
+    transform: rotate(332.30deg) translate(130px);
+}
+
+.ruleta .letra:nth-child(26) {
+    transform: rotate(346.15deg) translate(130px);
+}
+
+.flecha {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid rgb(255, 0, 0);
+}
+
+button {
+    padding: 10px 20px;
     font-size: 16px;
+    background-color: #4c00ff;
+    color: #fff;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 30px;
-    margin-top: 70px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+button:hover {
     background-color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
-    color: #0004ff;
+    color: #4c00ff;
 }
 
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+.letra.selected {
+    color: rgb(255, 0, 0);
 }
 
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 767px) {
-    .logo {
-        width: 50%;
-        margin-left: 0;
-        display: block;
-        margin: 0 auto;
+.letra-seleccionada {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    /* Espacio entre tarjetas */
+    margin-top: 20px;
+    /* Margen superior para separar de otros elementos */
+}
+
+.card {
+    background-image: url("https://i.pinimg.com/enabled_lo/236x/2b/fa/62/2bfa629510f808aa09e87f0648da08d9.jpg");
+    border: 1px solid #ddd;
+    /* Borde de la tarjeta */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    padding: 20px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centra el texto */
+    width: 150px;
+    /* Ancho fijo para las tarjetas */
+    height: 100px;
+    margin: 10px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    /* Espaciado inferior del título */
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+}
+
+.card p {
+    font-size: 18px;
+    /* Tamaño del texto del párrafo */
+    font-weight: bold;
+    /* Negrita para el texto */
+    color: rgb(0, 0, 0);
+}
+
+/* Media Queries para adaptación */
+@media (max-width: 768px) {
+    .ruleta-container {
+        width: 250px;
+        height: 250px;
     }
 
-    .h1 {
-        font-size: 24px;
-        margin-top: 20px;
+    .letra-seleccionada {
+        font-size: 36px;
     }
 
-    #result, #result2, #result3 {
+    .card {
+        width: 120px;
+        height: 80px;
+    }
+
+    button {
         font-size: 14px;
-        width: 90%;
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    .btn {
-        width: 90%;
-        margin: 20px;
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 8px 16px;
     }
 }
 
-/* Estilos para tabletas */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+        /* Asegura que los elementos se apilen verticalmente */
+        padding: 10px;
+        /* Agrega un poco de espaciado */
+    }
+
+    .logo-container {
+        height: 50px;
+        /* Reduce la altura del contenedor del logo */
+    }
+
     .logo {
-        width: 40%;
-        margin-left: 0;
-        display: block;
-        margin: 0 auto;
+        max-height: 40px;
+        /* Altura máxima del logo en móviles */
     }
 
-    .h1 {
-        font-size: 28px;
-        margin-top: 10px;
+    .ruleta-container {
+        width: 200px;
+        height: 200px;
     }
 
-    #result, #result2, #result3 {
-        font-size: 16px;
-        width: 85%;
-        max-width: 400px;
-        padding: 18px;
+    .letra-seleccionada {
+        font-size: 30px;
     }
 
-    .btn {
-        width: 85%;
-        margin: 30px auto;
-        padding: 12px 24px;
-        font-size: 16px;
+    .card {
+        width: 100px;
+        height: 60px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
-
-

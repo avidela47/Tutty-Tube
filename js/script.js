@@ -1,31 +1,36 @@
-// Espera a que el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    const generarBtn = document.getElementById('generarBtn');
-    const result = document.getElementById('result');
-    const result2 = document.getElementById('result2');
-    const result3 = document.getElementById('result3');
+document.getElementById('generar-artista').addEventListener('click', function () {
+    const ruleta = document.getElementById('ruleta');
+    const letras = document.querySelectorAll('.letra');
+    const letraSeleccionada = document.getElementById('letra-seleccionada');
 
-    // Agregar el evento de clic al botón
-    generarBtn.addEventListener('click', function() {
-        let firstname = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        let sexo = ["Hombre", "Mujer"];
-        let idioma = ["Español", "Inglés"];
+    // Limpiar selección previa
+    letras.forEach(letra => letra.classList.remove('selected'));
+    letraSeleccionada.textContent = '?'; // Limpiar la letra seleccionada
 
-        let rand_first = Math.floor(Math.random() * firstname.length);
-        let rand_sexo = Math.floor(Math.random() * sexo.length);
-        let rand_idioma = Math.floor(Math.random() * idioma.length);
+    // Rotar la ruleta aleatoriamente
+    const randomRotation = Math.floor(Math.random() * 360) + 720; // 720 para dar mínimo 2 vueltas completas
+    ruleta.style.transform = `rotate(${randomRotation}deg)`;
 
-        result.innerHTML = "<h1>Letra:</h1><div class='alert alert-success'><h2>" + firstname[rand_first] + "</h2></div>";
-        result2.innerHTML = "<h1>Sexo:</h1><div class='alert alert-success'><h2>" + sexo[rand_sexo] + "</h2></div>";
-        result3.innerHTML = "<h1>Idioma:</h1><div class='alert alert-success'><h2>" + idioma[rand_idioma] + "</h2></div>";
+    // Obtener letra seleccionada
+    setTimeout(() => {
+        const selectedAngle = (randomRotation % 360);
+        const index = Math.round(selectedAngle / 13.84) % 26; // Dividido por los grados por letra
 
-        // Muestra los resultados
-        result.style.display = 'block';
-        result2.style.display = 'block';
-        result3.style.display = 'block';
-    });
+        const letraElegida = letras[index];
+        letraElegida.classList.add('selected');
+
+        // Mostrar letra en el centro
+        letraSeleccionada.textContent = letraElegida.textContent;
+    }, 5000); // Detener tras 5 segundos
+
+    // Generar sexo aleatorio
+    const sexos = ['Hombre', 'Mujer'];
+    const sexoSeleccionado = sexos[Math.floor(Math.random() * sexos.length)];
+    document.getElementById('sexo').textContent = sexoSeleccionado;
+
+    // Generar idioma aleatorio
+    const idiomas = ['Español', 'Inglés'];
+    const idiomaSeleccionado = idiomas[Math.floor(Math.random() * idiomas.length)];
+    document.getElementById('idioma').textContent = idiomaSeleccionado;
 });
-
-
-
 
