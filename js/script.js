@@ -2,6 +2,7 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     const ruleta = document.getElementById('ruleta');
     const letras = document.querySelectorAll('.letra');
     const letraSeleccionada = document.getElementById('letra-seleccionada');
+    const timerElement = document.getElementById('timer');
 
     // Limpiar selección previa
     letras.forEach(letra => letra.classList.remove('selected'));
@@ -32,5 +33,34 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     const idiomas = ['Español', 'Inglés'];
     const idiomaSeleccionado = idiomas[Math.floor(Math.random() * idiomas.length)];
     document.getElementById('idioma').textContent = idiomaSeleccionado;
+
+    // Reiniciar el temporizador
+    clearInterval(timerInterval); // Limpiar cualquier intervalo previo
+    startTimer(50); // Iniciar el temporizador en 45 segundos
 });
+
+// Temporizador
+let timerInterval;
+
+function startTimer(duration) {
+    let timer = duration, minutes, seconds;
+    const timerElement = document.getElementById('timer');
+    timerElement.classList.remove('timer-red'); // Quitar parpadeo rojo
+
+    timerInterval = setInterval(() => {
+        minutes = Math.floor(timer / 60);
+        seconds = timer % 60;
+
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        timerElement.textContent = `${minutes}:${seconds}`;
+
+        if (--timer < 0) {
+            clearInterval(timerInterval); // Detener el temporizador
+            timerElement.textContent = "00:00";
+            timerElement.classList.add('timer-red'); // Activar parpadeo rojo
+        }
+    }, 1000);
+}
+
 

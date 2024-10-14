@@ -270,6 +270,37 @@ button:hover {
     color: rgb(0, 0, 0);
 }
 
+.timer-container {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#timer {
+    font-weight: bold;
+    
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+p {
+    color: white;
+}
+
+.timer-red {
+    color: red;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 /* Media Queries para adaptación */
 @media (max-width: 768px) {
     .ruleta-container {
@@ -380,10 +411,12 @@ button:hover {
     }
 
     .card h3 {
-        font-size: 12px; /* Reduce el tamaño del texto del título */
+        font-size: 15px; /* Reduce el tamaño del texto del título */
+        color: white;
     }
 
     .card p {
-        font-size: 14px; /* Reduce el tamaño del texto del párrafo */
+        font-size: 18px; /* Reduce el tamaño del texto del párrafo */
+        color: white;
     }
 }
