@@ -36,7 +36,7 @@ document.getElementById('generar-artista').addEventListener('click', function ()
 
     // Reiniciar el temporizador
     clearInterval(timerInterval); // Limpiar cualquier intervalo previo
-    startTimer(50); // Iniciar el temporizador en 45 segundos
+    startTimer(45); // Iniciar el temporizador en 45 segundos
 });
 
 // Temporizador
@@ -51,7 +51,8 @@ function startTimer(duration) {
         minutes = Math.floor(timer / 60);
         seconds = timer % 60;
 
-        seconds = seconds < 10 ? '0' + seconds : seconds;
+        minutes = minutes < 10 ? '0' + minutes : minutes;  // Formatear los minutos con dos dígitos
+        seconds = seconds < 10 ? '0' + seconds : seconds;  // Formatear los segundos con dos dígitos
 
         timerElement.textContent = `${minutes}:${seconds}`;
 
@@ -62,5 +63,6 @@ function startTimer(duration) {
         }
     }, 1000);
 }
+
 
 
