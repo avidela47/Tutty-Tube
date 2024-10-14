@@ -329,3 +329,61 @@ button:hover {
         padding: 6px 12px;
     }
 }
+
+@media only screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+        background-size: 100% 100%; /* Ajusta la imagen para cubrir el fondo en pantallas más pequeñas */
+    }
+
+    .logo-container {
+        height: 50px; /* Ajusta la altura del contenedor en pantallas pequeñas */
+    }
+
+    .logo {
+        max-height: 40px; /* Reduce el tamaño del logo */
+    }
+
+    .ruleta-container {
+        width: 300px; /* Reduce el tamaño de la ruleta */
+        height: 300px;
+        margin-top: 50px;
+    }
+
+    .ruleta .letra {
+        font-size: 16px; /* Reduce el tamaño de las letras en la ruleta */
+    }
+
+    .flecha {
+        top: 30px; /* Ajusta la posición de la flecha */
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid rgb(255, 0, 0);
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px; /* Reduce el tamaño del botón */
+        margin-top: 50px;
+    }
+
+    .card-container {
+        flex-direction: row; /* Cambia el diseño a columna para que las tarjetas se apilen */
+        align-items: center;
+    }
+
+    .card {
+        width: 100px; /* Reduce el ancho de las tarjetas */
+        height: 80px; /* Reduce la altura de las tarjetas */
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .card h3 {
+        font-size: 12px; /* Reduce el tamaño del texto del título */
+    }
+
+    .card p {
+        font-size: 14px; /* Reduce el tamaño del texto del párrafo */
+    }
+}
