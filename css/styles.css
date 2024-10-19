@@ -419,4 +419,15 @@ p {
         font-size: 18px; /* Reduce el tamaño del texto del párrafo */
         color: white;
     }
+
+    p {
+        color: rgb(0, 0, 0);
+    }
+
+    #timer {
+        font-weight: bold;    
+        border: solid 2px rgb(0, 0, 0);
+        border-radius: 8px;
+        margin-top: -20px;
+    }
 }
