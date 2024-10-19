@@ -301,6 +301,13 @@ p {
     }
 }
 
+#arlequin-img-idioma, #arlequin-img-sexo {
+    width: auto;
+    height: auto;
+    margin-top: -75px;
+    margin-left: 5px;
+}
+
 /* Media Queries para adaptación */
 @media (max-width: 768px) {
     .ruleta-container {
