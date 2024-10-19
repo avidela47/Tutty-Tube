@@ -12,7 +12,7 @@ body {
     height: 100%; /* Ocupa toda la altura de la ventana */
     width: 100%; /* Ocupa todo el ancho de la ventana */
     margin: 0; /* Elimina cualquier margen */
-    background-image: url("https://i.pinimg.com/474x/65/0e/49/650e494e513a0c2adc85747e173b748d.jpg");
+    background-image: url("https://i.pinimg.com/236x/fa/68/e6/fa68e6f30bc736cd0d73ea6b2cc31bd8.jpg");
     background-size: 100% auto; /* Ajusta la imagen para que ocupe el 100% del ancho sin deformarse */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
@@ -421,12 +421,12 @@ p {
     }
 
     p {
-        color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
     }
 
     #timer {
         font-weight: bold;    
-        border: solid 2px rgb(0, 0, 0);
+        border: solid 2px rgb(255, 255, 255);
         border-radius: 8px;
         margin-top: -20px;
     }
