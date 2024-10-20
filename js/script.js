@@ -35,7 +35,7 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     const sexoSeleccionado = sexos[Math.floor(Math.random() * sexos.length)];
 
     // Generar idioma aleatorio, incluyendo Arlequín
-    const idiomas = ['Español', 'Inglés', 'Otro', 'Arlequín'];
+    const idiomas = ['Solista', 'Banda', 'Arlequín'];
     const idiomaSeleccionado = idiomas[Math.floor(Math.random() * idiomas.length)];
 
     // Mostrar imagen de Arlequín en la tarjeta correspondiente y ocultar el texto

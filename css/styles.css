@@ -285,6 +285,7 @@ button:hover {
 
 p {
     color: white;
+    margin-top: 10px;
 }
 
 .timer-red {
@@ -304,7 +305,7 @@ p {
 #arlequin-img-idioma, #arlequin-img-sexo {
     width: auto;
     height: auto;
-    margin-top: -75px;
+    margin-top: -45px;
     margin-left: 5px;
 }
 
