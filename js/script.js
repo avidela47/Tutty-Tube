@@ -4,31 +4,32 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     const letraSeleccionada = document.getElementById('letra-seleccionada');
     const arlequinImgSexo = document.getElementById('arlequin-img-sexo');
     const arlequinImgIdioma = document.getElementById('arlequin-img-idioma');
-    const cardSexo = document.getElementById('card-sexo');
-    const cardIdioma = document.getElementById('card-idioma');
     const sexoText = document.getElementById('sexo');
     const idiomaText = document.getElementById('idioma');
 
     // Limpiar selección previa
     letras.forEach(letra => letra.classList.remove('selected'));
-    letraSeleccionada.textContent = '?'; // Limpiar la letra seleccionada
-    arlequinImgSexo.style.display = 'none'; // Ocultar imagen de Arlequín en sexo
-    arlequinImgIdioma.style.display = 'none'; // Ocultar imagen de Arlequín en idioma
-    sexoText.textContent = '?'; // Reiniciar el texto del sexo
-    idiomaText.textContent = '?'; // Reiniciar el texto del idioma
+    letraSeleccionada.textContent = '?';
+    arlequinImgSexo.style.display = 'none';
+    arlequinImgIdioma.style.display = 'none';
+    sexoText.textContent = '?';
+    idiomaText.textContent = '?';
 
-    // Rotar la ruleta aleatoriamente
-    const randomRotation = Math.floor(Math.random() * 360) + 720; // 720 para dar mínimo 2 vueltas completas
-    ruleta.style.transform = `rotate(${randomRotation}deg)`;
+    // Rotar la ruleta aleatoriamente con al menos 2 vueltas completas
+    const vueltasMinimas = 720; // 720 grados para 2 vueltas completas
+    const randomRotation = vueltasMinimas + Math.floor(Math.random() * 360); // Sumamos entre 0 y 360 grados adicionales
+    ruleta.style.transition = 'transform 1s ease-out'; // Velocidad rápida de 1 segundo
+    ruleta.style.transform = `rotate(${randomRotation}deg)`; // Aplicar rotación
 
-    // Obtener letra seleccionada
+    // Obtener la letra seleccionada cuando la ruleta se detenga
     setTimeout(() => {
-        const selectedAngle = (randomRotation % 360);
-        const index = Math.round(selectedAngle / 13.84) % 26; // Dividido por los grados por letra
-        const letraElegida = letras[index];
-        letraElegida.classList.add('selected');
-        letraSeleccionada.textContent = letraElegida.textContent;
-    }, 5000); // Detener tras 5 segundos
+        const selectedAngle = (randomRotation % 360); // Ángulo final
+        const degreesPerLetter = 360 / letras.length; // Asumiendo 26 letras, cada una ocupa 360/26 grados
+        const index = Math.round((360 - selectedAngle) / degreesPerLetter) % letras.length; // Calcular el índice de la letra
+        const letraElegida = letras[index]; // Letra seleccionada
+        letraElegida.classList.add('selected'); // Marcar la letra seleccionada visualmente
+        letraSeleccionada.textContent = letraElegida.textContent; // Mostrar la letra seleccionada en el centro
+    }, 1000); // El tiempo debe coincidir con la duración de la animación (1 segundo)
 
     // Generar sexo aleatorio, incluyendo Arlequín
     const sexos = ['Hombre', 'Mujer', 'Arlequín'];
@@ -40,22 +41,22 @@ document.getElementById('generar-artista').addEventListener('click', function ()
 
     // Mostrar imagen de Arlequín en la tarjeta correspondiente y ocultar el texto
     if (sexoSeleccionado === 'Arlequín') {
-        arlequinImgSexo.style.display = 'block'; // Mostrar imagen en la tarjeta de sexo
-        sexoText.textContent = ''; // Quitar el texto si es Arlequín
+        arlequinImgSexo.style.display = 'block';
+        sexoText.textContent = '';
     } else {
-        sexoText.textContent = sexoSeleccionado; // Mostrar el texto de Hombre o Mujer
+        sexoText.textContent = sexoSeleccionado;
     }
 
     if (idiomaSeleccionado === 'Arlequín') {
-        arlequinImgIdioma.style.display = 'block'; // Mostrar imagen en la tarjeta de idioma
-        idiomaText.textContent = ''; // Quitar el texto si es Arlequín
+        arlequinImgIdioma.style.display = 'block';
+        idiomaText.textContent = '';
     } else {
-        idiomaText.textContent = idiomaSeleccionado; // Mostrar el texto de Español, Inglés u Otro
+        idiomaText.textContent = idiomaSeleccionado;
     }
 
     // Reiniciar el temporizador
-    clearInterval(timerInterval); // Limpiar cualquier intervalo previo
-    startTimer(45); // Iniciar el temporizador en 45 segundos
+    clearInterval(timerInterval);
+    startTimer(60);
 });
 
 // Temporizador
@@ -64,7 +65,7 @@ let timerInterval;
 function startTimer(duration) {
     let timer = duration, minutes, seconds;
     const timerElement = document.getElementById('timer');
-    timerElement.classList.remove('timer-red'); // Quitar parpadeo rojo
+    timerElement.classList.remove('timer-red');
 
     timerInterval = setInterval(() => {
         minutes = Math.floor(timer / 60);
@@ -75,12 +76,14 @@ function startTimer(duration) {
         timerElement.textContent = `${minutes}:${seconds}`;
 
         if (--timer < 0) {
-            clearInterval(timerInterval); // Detener el temporizador
+            clearInterval(timerInterval);
             timerElement.textContent = "00:00";
-            timerElement.classList.add('timer-red'); // Activar parpadeo rojo
+            timerElement.classList.add('timer-red');
         }
     }, 1000);
 }
+
+
 
 
 

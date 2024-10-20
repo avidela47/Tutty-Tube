@@ -66,7 +66,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    transition: transform 5s ease-out;
+    transition: transform 0.8s ease-out;
     background-image: url("https://i.pinimg.com/236x/c0/8a/5a/c08a5a0f58617e1defc4eb9e59c8772e.jpg");
     background-size: cover;
     background-position: center;
