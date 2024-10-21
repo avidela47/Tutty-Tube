@@ -6,6 +6,8 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     const arlequinImgIdioma = document.getElementById('arlequin-img-idioma');
     const sexoText = document.getElementById('sexo');
     const idiomaText = document.getElementById('idioma');
+    const inputField = document.getElementById('youtube-input'); // Input que será deshabilitado
+    inputField.disabled = false; // Habilitar el input al girar la rueda
 
     // Limpiar selección previa
     letras.forEach(letra => letra.classList.remove('selected'));
@@ -56,7 +58,7 @@ document.getElementById('generar-artista').addEventListener('click', function ()
 
     // Reiniciar el temporizador
     clearInterval(timerInterval);
-    startTimer(60);
+    startTimer(60); // Iniciar con 60 segundos o el tiempo que necesites
 });
 
 // Temporizador
@@ -65,7 +67,9 @@ let timerInterval;
 function startTimer(duration) {
     let timer = duration, minutes, seconds;
     const timerElement = document.getElementById('timer');
+    const inputField = document.getElementById('youtube-input'); // Input que será deshabilitado
     timerElement.classList.remove('timer-red');
+    inputField.disabled = false; // Habilitar el input cuando comienza el temporizador
 
     timerInterval = setInterval(() => {
         minutes = Math.floor(timer / 60);
@@ -79,6 +83,7 @@ function startTimer(duration) {
             clearInterval(timerInterval);
             timerElement.textContent = "00:00";
             timerElement.classList.add('timer-red');
+            inputField.disabled = true; // Deshabilitar el input cuando el tiempo llegue a cero
         }
     }, 1000);
 }
@@ -90,6 +95,7 @@ document.getElementById('youtube-button').addEventListener('click', function() {
         window.open(youtubeUrl, '_blank');
     }
 });
+
 
 
 
