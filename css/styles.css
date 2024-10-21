@@ -9,15 +9,23 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%; /* Ocupa toda la altura de la ventana */
-    width: 100%; /* Ocupa todo el ancho de la ventana */
-    margin: 0; /* Elimina cualquier margen */
+    height: 100%;
+    /* Ocupa toda la altura de la ventana */
+    width: 100%;
+    /* Ocupa todo el ancho de la ventana */
+    margin: 0;
+    /* Elimina cualquier margen */
     background-image: url("https://i.pinimg.com/236x/fa/68/e6/fa68e6f30bc736cd0d73ea6b2cc31bd8.jpg");
-    background-size: 100% auto; /* Ajusta la imagen para que ocupe el 100% del ancho sin deformarse */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen */
-    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-    background-color: #000; /* Fondo negro si la imagen no carga */
+    background-size: 100% auto;
+    /* Ajusta la imagen para que ocupe el 100% del ancho sin deformarse */
+    background-position: center;
+    /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    background-attachment: fixed;
+    /* Mantiene la imagen fija al hacer scroll */
+    background-color: #000;
+    /* Fondo negro si la imagen no carga */
 }
 
 /* Estilo del contenedor del logo */
@@ -281,7 +289,7 @@ button:hover {
 }
 
 #timer {
-    font-weight: bold;    
+    font-weight: bold;
     border: solid 2px rgb(255, 255, 255);
     border-radius: 8px;
     margin-top: -20px;
@@ -298,15 +306,19 @@ p {
 }
 
 @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
 }
 
-#arlequin-img-idioma, #arlequin-img-sexo {
+#arlequin-img-idioma,
+#arlequin-img-sexo {
     width: auto;
     height: auto;
     margin-top: -45px;
@@ -406,29 +418,35 @@ p {
     body {
         flex-direction: column;
         padding: 20px;
-        background-size: 100% 100%; /* Ajusta la imagen para cubrir el fondo en pantallas más pequeñas */
+        background-size: 100% 100%;
+        /* Ajusta la imagen para cubrir el fondo en pantallas más pequeñas */
     }
 
     .logo-container {
-        height: 50px; /* Ajusta la altura del contenedor en pantallas pequeñas */
+        height: 50px;
+        /* Ajusta la altura del contenedor en pantallas pequeñas */
     }
 
     .logo {
-        max-height: 40px; /* Reduce el tamaño del logo */
+        max-height: 40px;
+        /* Reduce el tamaño del logo */
     }
 
     .ruleta-container {
-        width: 300px; /* Reduce el tamaño de la ruleta */
+        width: 300px;
+        /* Reduce el tamaño de la ruleta */
         height: 300px;
         margin-top: 10px;
     }
 
     .ruleta .letra {
-        font-size: 16px; /* Reduce el tamaño de las letras en la ruleta */
+        font-size: 16px;
+        /* Reduce el tamaño de las letras en la ruleta */
     }
 
     .flecha {
-        top: 30px; /* Ajusta la posición de la flecha */
+        top: 30px;
+        /* Ajusta la posición de la flecha */
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-bottom: 20px solid rgb(255, 0, 0);
@@ -436,28 +454,35 @@ p {
 
     button {
         padding: 8px 16px;
-        font-size: 14px; /* Reduce el tamaño del botón */
+        font-size: 14px;
+        /* Reduce el tamaño del botón */
         margin-top: 15px;
     }
 
     .card-container {
-        flex-direction: row; /* Cambia el diseño a columna para que las tarjetas se apilen */
+        flex-direction: row;
+        /* Cambia el diseño a columna para que las tarjetas se apilen */
         align-items: center;
     }
 
     .card {
-        width: 100px; /* Reduce el ancho de las tarjetas */
-        height: 80px; /* Reduce la altura de las tarjetas */
-        padding: 10px; /* Reduce el padding */
+        width: 100px;
+        /* Reduce el ancho de las tarjetas */
+        height: 80px;
+        /* Reduce la altura de las tarjetas */
+        padding: 10px;
+        /* Reduce el padding */
     }
 
     .card h3 {
-        font-size: 15px; /* Reduce el tamaño del texto del título */
+        font-size: 15px;
+        /* Reduce el tamaño del texto del título */
         color: white;
     }
 
     .card p {
-        font-size: 18px; /* Reduce el tamaño del texto del párrafo */
+        font-size: 18px;
+        /* Reduce el tamaño del texto del párrafo */
         color: white;
     }
 
@@ -466,7 +491,7 @@ p {
     }
 
     #timer {
-        font-weight: bold;    
+        font-weight: bold;
         border: solid 2px rgb(255, 255, 255);
         border-radius: 8px;
         margin-top: -20px;
