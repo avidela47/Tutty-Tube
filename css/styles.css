@@ -416,7 +416,7 @@ p {
     .ruleta-container {
         width: 300px; /* Reduce el tamaño de la ruleta */
         height: 300px;
-        margin-top: 50px;
+        margin-top: 10px;
     }
 
     .ruleta .letra {
