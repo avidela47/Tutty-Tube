@@ -32,11 +32,11 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     }, 1000); // El tiempo debe coincidir con la duración de la animación (1 segundo)
 
     // Generar sexo aleatorio, incluyendo Arlequín
-    const sexos = ['Hombre', 'Mujer', 'Arlequín'];
+    const sexos = ['HOMBRE', 'MUJER', 'Arlequín'];
     const sexoSeleccionado = sexos[Math.floor(Math.random() * sexos.length)];
 
     // Generar idioma aleatorio, incluyendo Arlequín
-    const idiomas = ['Solista', 'Banda', 'Arlequín'];
+    const idiomas = ['SOLISTA', 'BANDA', 'Arlequín'];
     const idiomaSeleccionado = idiomas[Math.floor(Math.random() * idiomas.length)];
 
     // Mostrar imagen de Arlequín en la tarjeta correspondiente y ocultar el texto
