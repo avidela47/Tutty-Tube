@@ -7,6 +7,8 @@ document.getElementById('generar-artista').addEventListener('click', function ()
     const sexoText = document.getElementById('sexo');
     const idiomaText = document.getElementById('idioma');
     const inputField = document.getElementById('youtube-input'); // Input que será deshabilitado
+    // Limpiar el input de búsqueda
+    inputField.value = '';
     inputField.disabled = false; // Habilitar el input al girar la rueda
 
     // Limpiar selección previa
