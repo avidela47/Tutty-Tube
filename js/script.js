@@ -91,8 +91,8 @@ function startTimer(duration) {
 document.getElementById('youtube-button').addEventListener('click', function () {
     const query = document.getElementById('youtube-input').value;
     if (query) {
-        const youtubeUrl = `youtube.com/results?search_query=${encodeURIComponent(query)}`;
-        window.open(youtubeUrl, '_self');
+        const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+        window.open(youtubeUrl, '_blank');
     }
 });
 
