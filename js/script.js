@@ -91,10 +91,18 @@ function startTimer(duration) {
 }
 
 document.getElementById('youtube-button').addEventListener('click', function () {
-    const query = document.getElementById('youtube-input').value;
+    let query = document.getElementById('youtube-input').value;
+    const letraSeleccionada = document.getElementById('letra-seleccionada').textContent;
+
+    // Si no hay texto en el input, se utiliza la letra seleccionada por la ruleta
+    if (!query && letraSeleccionada !== '?') {
+        query = letraSeleccionada;
+    }
+
     if (query) {
-        const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
-        window.location.href = youtubeUrl; // Redirige a la app de YouTube
+        // Usar el esquema 'youtube://' para intentar abrir la app de YouTube
+        const youtubeUrl = `youtube://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+        window.location.href = youtubeUrl; // Redirige a la app de YouTube en dispositivos móviles
     }
 });
 
