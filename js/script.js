@@ -93,7 +93,7 @@ function startTimer(duration) {
 document.getElementById('youtube-button').addEventListener('click', function () {
     const query = document.getElementById('youtube-input').value;
     if (query) {
-        const youtubeUrl = `youtube://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+        const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
         window.location.href = youtubeUrl; // Redirige a la app de YouTube
     }
 });
