@@ -90,20 +90,12 @@ function startTimer(duration) {
     }, 1000);
 }
 
-document.getElementById('youtube-button').addEventListener('click', function() {
-    const searchQuery = document.getElementById('youtube-input').value;
-    // URL scheme para abrir la app de YouTube
-    const youtubeAppUrl = `youtube://results?search_query=${encodeURIComponent(searchQuery)}`;
-    // URL de respaldo para el navegador en caso de que la app no esté instalada
-    const youtubeFallbackUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
-    
-    // Intenta abrir la app primero
-    window.location.href = youtubeAppUrl;
-    
-    // Establece un pequeño retraso y verifica si necesitamos usar la URL de respaldo
-    setTimeout(function() {
-        window.location.href = youtubeFallbackUrl;
-    }, 1000);
+document.getElementById('youtube-button').addEventListener('click', function () {
+    const query = document.getElementById('youtube-input').value;
+    if (query) {
+        const youtubeUrl = `intent://youtube.com/results?search_query=${encodeURIComponent(query)}`;
+        window.location.href = youtubeUrl; // Redirige a la app de YouTube
+    }
 });
 
 
