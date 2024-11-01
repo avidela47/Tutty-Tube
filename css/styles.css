@@ -15,7 +15,7 @@ body {
     /* Ocupa todo el ancho de la ventana */
     margin: 0;
     /* Elimina cualquier margen */
-    background-image: url("https://i.pinimg.com/236x/fa/68/e6/fa68e6f30bc736cd0d73ea6b2cc31bd8.jpg");
+    background-image: url(../img/fondobackground.jpg);
     background-size: 100% auto;
     /* Ajusta la imagen para que ocupe el 100% del ancho sin deformarse */
     background-position: center;
@@ -75,7 +75,7 @@ body {
     align-items: center;
     position: relative;
     transition: transform 0.8s ease-out;
-    background-image: url("https://i.pinimg.com/236x/c0/8a/5a/c08a5a0f58617e1defc4eb9e59c8772e.jpg");
+    background-image: url(../img/fondoruleta.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -250,7 +250,7 @@ button:hover {
 }
 
 .card {
-    background-image: url("https://i.pinimg.com/enabled_lo/236x/2b/fa/62/2bfa629510f808aa09e87f0648da08d9.jpg");
+    background-image: url(../img/fondocard.jpg);
     border: 1px solid #ddd;
     /* Borde de la tarjeta */
     border-radius: 8px;
